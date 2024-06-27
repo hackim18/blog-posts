@@ -4,9 +4,10 @@ import { sequelizeConfig } from './config/sequelize.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
-  imports: [SequelizeModule.forRoot(sequelizeConfig), UsersModule],
+  imports: [SequelizeModule.forRoot(sequelizeConfig), UsersModule, PostsModule],
   controllers: [AppController],
   providers: [AppService],
 })
