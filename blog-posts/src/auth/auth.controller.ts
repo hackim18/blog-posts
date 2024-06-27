@@ -9,11 +9,6 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req) {
-    if (!req.user) {
-      return {
-        message: 'Invalid credentials',
-      };
-    }
     return this.authService.login(req.user.dataValues);
   }
 }
