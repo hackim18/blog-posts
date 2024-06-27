@@ -11,6 +11,11 @@ export class UsersController {
     @Body('email') email: string,
     @Body('password') password: string,
   ) {
+    if (!name || !email || !password) {
+      return {
+        message: 'Please provide name, email and password',
+      };
+    }
     const user = await this.usersService.findByEmail(email);
     if (user) {
       return {
