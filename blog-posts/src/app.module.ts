@@ -3,9 +3,10 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { sequelizeConfig } from './config/sequelize.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [SequelizeModule.forRoot(sequelizeConfig)],
+  imports: [SequelizeModule.forRoot(sequelizeConfig), UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
